@@ -140,13 +140,13 @@ main {
         margin-top: auto;
 
         li {
-            &:last-child {
+            /* &:last-child {
                 background: #000;
             }
 
             &:first-child {
                 background: #000;
-            }
+            } */
 
             button {
                 width: 40px;
