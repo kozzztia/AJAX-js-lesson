@@ -1,24 +1,18 @@
-const searchButton = document.querySelector('.search-button')
+const searchForm = document.querySelector('.search-form');
 
 
 
+searchForm.onsubmit = formHandle;
 
-searchButton.onclick = (e) =>{
-    e.preventDefault()
-    console.log(e)
-    const searchValue = getSearchParams()
+function formHandle(e){
+    e.preventDefault();
+    const input = e.target.querySelector(`[name = "search-value"]`);
 
-    console.log(searchValue)
+
+    fetchFilms(input.value)
+    input.value = ""
 }
 
-
-
-
-function getSearchParams(){
-    const value =  document.querySelector('.search-input').value;
-    if(value.length > 3){
-        return value;
-    }else{
-        document.querySelector('.search-input').focus()
-    }
+function fetchFilms(value){
+    console.log(value)
 }

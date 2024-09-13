@@ -1,6 +1,6 @@
 :root {
     --main-color: #333;
-    --decore-color: #cfff24;
+    --decore-color: #64B5F6;
     --background-color: #f4f4f4;
     --font-size: 16px;
     --max-width: 1400px;
@@ -76,38 +76,27 @@ header {
         letter-spacing: 5px;
     }
 
-    label {
+    form {
         overflow: hidden;
         display: flex;
         flex-direction: row;
         justify-content: stretch;
+        gap :10px;
         cursor: pointer;
-        svg{
-            transition: filter .5s ease;
-        }
-        input {
+        input{
             border-radius: 10px;
-            padding: 10px;
-            border: none;
+            padding : 10px;
+            border : 2px solid var(--background-color);
             outline: none;
-            width :0;
-            padding: 0;
-            opacity: 0;
-            visibility: hidden;
-            transition: all .2s ease;
-        }
-        input:focus, input:active{
-            width : 200px;
-            padding: 10px;
-            opacity: 1;
-            visibility: visible;
-
-        }
-        &:hover{
-            svg{
-                transition: filter .5s ease;
-                filter: drop-shadow(0 0 2px var(--decore-color));
+            &:active, &:focus{
+                border : 2px solid var(--decore-color);
             }
+        }
+        button{
+            border :none;
+            outline: none;
+            background: inherit;
+            cursor: pointer;
         }
     }
 }
