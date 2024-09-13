@@ -81,7 +81,10 @@ header {
         display: flex;
         flex-direction: row;
         justify-content: stretch;
-        /* align-items: center; */
+        cursor: pointer;
+        svg{
+            transition: filter .5s ease;
+        }
         input {
             padding: 10px;
             border: none;
@@ -93,6 +96,12 @@ header {
         input:focus, input:active{
             width : 200px;
             padding: 10px;
+        }
+        &:hover{
+            svg{
+                transition: filter .5s ease;
+                filter: drop-shadow(0 0 2px var(--decore-color));
+            }
         }
     }
 }
