@@ -86,16 +86,22 @@ header {
             transition: filter .5s ease;
         }
         input {
+            border-radius: 10px;
             padding: 10px;
             border: none;
             outline: none;
             width :0;
             padding: 0;
-            transition: width .5s ease;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .2s ease;
         }
         input:focus, input:active{
             width : 200px;
             padding: 10px;
+            opacity: 1;
+            visibility: visible;
+
         }
         &:hover{
             svg{
