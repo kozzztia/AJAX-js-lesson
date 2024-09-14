@@ -5,7 +5,7 @@ const main = document.querySelector('main');
 
 const api = "http://www.omdbapi.com/";
 const key = "2baeec96";
-let page = 1;
+let currentPage = 1;
 const filmList = document.createElement('ul');
 filmList.classList.add('film-list');
 
@@ -14,7 +14,7 @@ searchForm.onsubmit = formHandle;
 async function formHandle(e) {
     e.preventDefault();
     const input = e.target.querySelector(`[name = "search-value"]`);
-    const { Search, totalResults } = await fetchFilms(input.value);
+    const { Search, totalResults } = await fetchFilms(input.value, currentPage);
     resultTitle.innerHTML = `you have ${!!totalResults ? totalResults : "none"} films when search ${input.value}`;
 
     main.innerHTML = "";
@@ -55,7 +55,7 @@ function createPagination(count, searchValue) {
 }
 
 function handlePageClick(pageNumber, searchValue) {
-    currentPage = pageNumber;  // Обновляем текущую страницу
+    currentPage = pageNumber;  
     fetchFilms(searchValue, currentPage)
         .then(({ Search }) => {
             insertFilmsToList(Search)
