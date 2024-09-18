@@ -3,7 +3,7 @@ const resultTitle = document.querySelector('.result-title');
 const main = document.querySelector('main');
 
 
-const api = "http://www.omdbapi.com/";
+const api = "https://www.omdbapi.com/";
 const key = "2baeec96";
 let currentPage = 1;
 const filmList = document.createElement('ul');
